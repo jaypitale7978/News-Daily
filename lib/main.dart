@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:news/features/bottomNavigation/view/navigation_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/storage/storage_service/storage_service.dart';
 import 'features/bottomNavigation/controller/navigation_controller.dart';
@@ -9,7 +10,6 @@ import 'features/news/controller/news_controller.dart';
 import 'features/news/service/news_service.dart';
 import 'features/saved/controller/saved_news_controller.dart';
 import 'features/search/controller/search_news_controller.dart';
-import 'features/splash/view/splash_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashPage()
+      home: NavigationPage()
     );
   }
 }

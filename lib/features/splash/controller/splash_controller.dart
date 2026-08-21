@@ -14,7 +14,7 @@ class SplashController extends GetxController {
 
   Future<void> _navigateToNavigation() async {
     await Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(seconds: 3),
     );
 
     Get.off(
