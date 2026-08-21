@@ -87,9 +87,9 @@ The API is used for fetching headlines, categories, and search results.
 * SharedPreferences
 * News API
 
-## Architecture
+## 📁 Project Structure
+
 lib/
-│
 ├── app/
 │   └── styles/
 │       ├── app_colors.dart
@@ -112,10 +112,10 @@ lib/
 │   └── utils/
 │
 └── features/
-    │
     ├── home/
     │   ├── view/
     │   │   └── home_page.dart
+    │   │
     │   └── widgets/
     │       ├── browse_topics.dart
     │       ├── hero_article.dart
@@ -131,21 +131,27 @@ lib/
     │
     ├── news/
     │   ├── bindings/
+    │   │   └── news_bindings.dart
+    │   │
     │   ├── controller/
-    │   │   ├── news_bindings.dart
     │   │   └── news_controller.dart
+    │   │
     │   ├── model/
     │   │   ├── article_model.dart
     │   │   └── news_category.dart
+    │   │
     │   └── service/
     │       └── news_service.dart
     │
     ├── search/
     │   ├── controller/
     │   │   └── search_news_controller.dart
+    │   │
     │   ├── model/
+    │   │
     │   ├── view/
     │   │   └── search_page.dart
+    │   │
     │   └── widget/
     │       ├── article_divider.dart
     │       ├── search_article.dart
@@ -154,12 +160,14 @@ lib/
     ├── saved/
     │   ├── controller/
     │   │   └── saved_news_controller.dart
+    │   │
     │   └── view/
     │       └── saved_page.dart
     │
     ├── bottomNavigation/
     │   ├── controller/
     │   │   └── navigation_controller.dart
+    │   │
     │   └── view/
     │       ├── bottom_navigationBar.dart
     │       └── navigation_page.dart
@@ -167,6 +175,7 @@ lib/
     └── splash/
         ├── controller/
         │   └── splash_controller.dart
+        │
         └── view/
             └── splash_page.dart
 
