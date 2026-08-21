@@ -89,95 +89,48 @@ The API is used for fetching headlines, categories, and search results.
 
 ## 📁 Project Structure
 
-lib/
-├── app/
-│   └── styles/
-│       ├── app_colors.dart
-│       ├── app_size.dart
-│       └── app_text_style.dart
-│
-├── core/
-│   ├── const/
-│   │   └── animations/
-│   │       └── animations.dart
-│   │
-│   ├── network/
-│   │   ├── api_client.dart
-│   │   └── api_services.dart
-│   │
-│   ├── storage/
-│   │   └── storage_service/
-│   │       └── storage_service.dart
-│   │
-│   └── utils/
-│
-└── features/
-    ├── home/
-    │   ├── view/
-    │   │   └── home_page.dart
-    │   │
-    │   └── widgets/
-    │       ├── browse_topics.dart
-    │       ├── hero_article.dart
-    │       ├── home_header.dart
-    │       ├── latest_section.dart
-    │       ├── news_card.dart
-    │       ├── news_divider.dart
-    │       └── topic_chip.dart
-    │
-    ├── article/
-    │   └── view/
-    │       └── article_webview.dart
-    │
-    ├── news/
-    │   ├── bindings/
-    │   │   └── news_bindings.dart
-    │   │
-    │   ├── controller/
-    │   │   └── news_controller.dart
-    │   │
-    │   ├── model/
-    │   │   ├── article_model.dart
-    │   │   └── news_category.dart
-    │   │
-    │   └── service/
-    │       └── news_service.dart
-    │
-    ├── search/
-    │   ├── controller/
-    │   │   └── search_news_controller.dart
-    │   │
-    │   ├── model/
-    │   │
-    │   ├── view/
-    │   │   └── search_page.dart
-    │   │
-    │   └── widget/
-    │       ├── article_divider.dart
-    │       ├── search_article.dart
-    │       └── trending_chip.dart
-    │
-    ├── saved/
-    │   ├── controller/
-    │   │   └── saved_news_controller.dart
-    │   │
-    │   └── view/
-    │       └── saved_page.dart
-    │
-    ├── bottomNavigation/
-    │   ├── controller/
-    │   │   └── navigation_controller.dart
-    │   │
-    │   └── view/
-    │       ├── bottom_navigationBar.dart
-    │       └── navigation_page.dart
-    │
-    └── splash/
-        ├── controller/
-        │   └── splash_controller.dart
-        │
-        └── view/
-            └── splash_page.dart
+                    ┌─────────────────────┐
+                    │     Flutter App     │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+              ┌──────────────────────────────┐
+              │       Presentation Layer     │
+              │                              │
+              │ Home │ News │ Search │ Saved │
+              │ Article │ Splash │ Navigation│
+              │                              │
+              │        Reusable Widgets      │
+              └──────────────┬───────────────┘
+                             │
+                             ▼
+              ┌──────────────────────────────┐
+              │     State Management         │
+              │                              │
+              │ Controllers + Bindings       │
+              │            (GetX)             │
+              └──────────────┬───────────────┘
+                             │
+                             ▼
+              ┌──────────────────────────────┐
+              │       Service Layer          │
+              │                              │
+              │       News Service           │
+              └──────────────┬───────────────┘
+                             │
+                    ┌────────┴────────┐
+                    ▼                 ▼
+          ┌─────────────────┐  ┌─────────────────┐
+          │ Network Layer   │  │ Storage Layer   │
+          │                 │  │                 │
+          │ API Client      │  │ Local Storage   │
+          │ API Services    │  │                 │
+          └────────┬────────┘  └────────┬────────┘
+                   │                    │
+                   ▼                    ▼
+             ┌──────────┐        ┌─────────────┐
+             │ REST API │        │ Local Data  │
+             └──────────┘        └─────────────┘
 
 ### State Management
 
