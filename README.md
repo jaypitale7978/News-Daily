@@ -89,48 +89,61 @@ The API is used for fetching headlines, categories, and search results.
 
 ## 📁 Project Structure
 
-                    ┌─────────────────────┐
-                    │     Flutter App     │
-                    └──────────┬──────────┘
-                               │
-                               ▼
+                    ┌─────────────────────────┐
+                    │      Flutter App        │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
               ┌──────────────────────────────┐
-              │       Presentation Layer     │
+              │          VIEW (V)             │
               │                              │
-              │ Home │ News │ Search │ Saved │
-              │ Article │ Splash │ Navigation│
+              │  Pages + Widgets             │
               │                              │
-              │        Reusable Widgets      │
+              │  Home                        │
+              │  Article                      │
+              │  News                         │
+              │  Search                       │
+              │  Saved                        │
+              │  Splash                       │
+              │  Bottom Navigation            │
               └──────────────┬───────────────┘
                              │
                              ▼
               ┌──────────────────────────────┐
-              │     State Management         │
+              │       CONTROLLER (C)         │
               │                              │
-              │ Controllers + Bindings       │
-              │            (GetX)             │
+              │  GetX Controllers            │
+              │                              │
+              │  news_controller.dart        │
+              │  search_news_controller.dart │
+              │  saved_news_controller.dart  │
+              │  navigation_controller.dart  │
+              │  splash_controller.dart      │
               └──────────────┬───────────────┘
                              │
                              ▼
               ┌──────────────────────────────┐
-              │       Service Layer          │
+              │         MODEL (M)            │
               │                              │
-              │       News Service           │
+              │  article_model.dart          │
+              │  news_category.dart          │
+              │                              │
+              │  + News Service               │
               └──────────────┬───────────────┘
                              │
-                    ┌────────┴────────┐
-                    ▼                 ▼
-          ┌─────────────────┐  ┌─────────────────┐
-          │ Network Layer   │  │ Storage Layer   │
-          │                 │  │                 │
-          │ API Client      │  │ Local Storage   │
-          │ API Services    │  │                 │
-          └────────┬────────┘  └────────┬────────┘
-                   │                    │
-                   ▼                    ▼
-             ┌──────────┐        ┌─────────────┐
-             │ REST API │        │ Local Data  │
-             └──────────┘        └─────────────┘
+                    ┌────────┴─────────┐
+                    ▼                  ▼
+           ┌────────────────┐   ┌────────────────┐
+           │  API / Network │   │ Local Storage  │
+           │                │   │                │
+           │ api_client     │   │ storage_service│
+           │ api_services   │   │                │
+           └───────┬────────┘   └────────────────┘
+                   │
+                   ▼
+              ┌───────────┐
+              │ REST API  │
+              └───────────┘
 
 ### State Management
 
